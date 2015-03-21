@@ -1,0 +1,33 @@
+<h1>Listing companynames</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companynames.each do |companyname| %>
+      <tr>
+        <td><%= companyname.title %></td>
+        <td><%= companyname.name %></td>
+        <td><%= companyname.address %></td>
+        <td><%= companyname.phone %></td>
+        <td><%= link_to 'Show', companyname %></td>
+        <td><%= link_to 'Edit', edit_companyname_path(companyname) %></td>
+        <td><%= link_to 'Destroy', companyname, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Companyname', new_companyname_path %>
