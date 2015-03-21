@@ -1,4 +1,4 @@
-<%= form_for(@companyname) do |f| %>
+<%= simple_form_for(@companyname) do |f| %>
   <% if @companyname.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@companyname.errors.count, "error") %> prohibited this companyname from being saved:</h2>

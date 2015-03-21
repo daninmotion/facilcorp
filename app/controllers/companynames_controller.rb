@@ -1,6 +1,7 @@
 class CompanynamesController < ApplicationController
   before_action :set_companyname, only: [:show, :edit, :update, :destroy]
 
+
   # GET /companynames
   # GET /companynames.json
   def index
@@ -14,7 +15,7 @@ class CompanynamesController < ApplicationController
 
   # GET /companynames/new
   def new
-    @companyname = current_user.companynames.build
+    @companyname = Companyname.new
   end
 
   # GET /companynames/1/edit
