@@ -5,6 +5,7 @@ gem 'sqlite3'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'simple_form', '~> 3.1.0'
 gem 'devise', '~> 3.4.1'
+gem 'stripe', '~> 1.20.3'
 
 
 gem 'sass-rails', '~> 4.0.0'
