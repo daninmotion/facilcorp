@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
+  <div class="form-group">
+    <%= f.label "Nombre de la empresa" %><br>
     <%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
+  <div class="form-group">
+    <%= f.label "Nombre del empresario o epresaria" %><br>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :address %><br>
+  <div class="form-group">
+    <%= f.label "Dirección" %><br>
     <%= f.text_area :address %>
   </div>
-  <div class="field">
-    <%= f.label :phone %><br>
+  <div class="form-group">
+    <%= f.label "Teléfono" %><br>
     <%= f.text_area :phone %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-default" %>
   </div>
 <% end %>

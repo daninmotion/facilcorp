@@ -1,5 +1,6 @@
 class CompanynamesController < ApplicationController
   before_action :set_companyname, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
 
   # GET /companynames
