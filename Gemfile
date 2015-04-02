@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'rails', '4.0.1'
-gem 'sqlite3'
+gem 'sqlite3', group: :development
+# use sqlite for dev, postgres for production
+gem  'pg', group: :production
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'simple_form', '~> 3.1.0'
 gem 'devise', '~> 3.4.1'
@@ -32,6 +35,8 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
