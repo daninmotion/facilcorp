@@ -12,22 +12,18 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label "Nombre de la empresa" %><br>
-    <%= f.text_field :title %>
+    <%= f.input :title, :label => "Nombre de la empresa" %>
   </div>
   <div class="form-group">
-    <%= f.label "Nombre del empresario o epresaria" %><br>
-    <%= f.text_field :name %>
+    <%= f.input :name, :label => "Nombre del empresario o epresaria" %>
   </div>
   <div class="form-group">
-    <%= f.label "Dirección" %><br>
-    <%= f.text_area :address %>
+    <%= f.input :address, :label => "Dirección" %>
   </div>
   <div class="form-group">
-    <%= f.label "Teléfono" %><br>
-    <%= f.text_area :phone %>
+    <%= f.input :phone, :label => "Teléfono" %>
   </div>
   <div class="actions">
-    <%= f.submit class: "btn btn-default" %>
+    <%= f.submit "Crear su empresa", class: "btn btn-default" %>
   </div>
 <% end %>

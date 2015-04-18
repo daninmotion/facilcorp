@@ -14,4 +14,38 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "normalize.css.scss";
 
+html, body { 
+	padding-top: 2%; 
+	font-family: 'Raleway', sans-serif !important;
+	background-color: #0084B4 !important;
+}
+
+/***Sign up page***/
+
+.left {
+	margin-top: 5%;
+	margin-left: 5%;
+	color: white;
+}
+
+.left h1 {
+	font-size: 10em;
+}
+
+.left h3 {
+	margin-top: -10%;
+	font-size: 2.5em;
+}
+
+.right {
+	margin-left: 5%;
+	color: white;
+}
+
+#page_wrapper {
+	padding: 3em;
+	float: left;
+	margin-right: 2em;
+}
