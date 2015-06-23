@@ -1,6 +1,7 @@
 class CompanynamesController < ApplicationController
   before_action :set_companyname, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :store_company_data, only: [:create]
+  before_action :authenticate_user!, only: [:create]
 
 
   # GET /companynames
@@ -67,6 +68,12 @@ class CompanynamesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_companyname
       @companyname = Companyname.find(params[:id])
+    end
+
+    def store_company_data
+      unless user_signed_in?
+        session[:company] = params[:companynames]
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
