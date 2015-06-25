@@ -1,17 +1,14 @@
 <div class="row">
 
 	<div class="col-md-7">
-		<div class="left">
-			<h1>fácilcorp</h1>
-			<h3>La forma más fácil y rapida para los emprendedores Colombianos incorporar su empresa en los Estados Unidos.</h3>
-		</div>
+		
 	</div>
 
 	<div class="col-md-5">
 		
 		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 		  
-
+<%= hidden_field("id", @companyname.id) %>
 			 <form>
 			 	<div class="col-sm-7">
 			 		<div class="right">

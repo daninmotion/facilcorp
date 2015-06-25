@@ -1,4 +1,4 @@
-
+<% if @companyname %>
 
 <p>
   <strong>Nombre de la empresa:</strong>
@@ -19,7 +19,6 @@
   <strong>Teléfono:</strong>
   <%= @companyname.phone %>
 </p>
-
 <p>
   <strong>Por favor asegúrese de que el infomration este correcta. Una vez que usted paga comenzamos a procesar su información para incorporar su empresa.</strong>
 </p>
@@ -30,3 +29,4 @@
 <p>
   <%= render template: "charges/new" %>
 </p>
+<% end %>

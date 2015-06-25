@@ -1,12 +1,13 @@
 class CompanynamesController < ApplicationController
   before_action :set_companyname, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :store_company_data, only: [:create]
+  #before_action :authenticate_user!, only: [:create]
 
 
   # GET /companynames
   # GET /companynames.json
   def index
-    @companynames = Companyname.all
+    @companynames = current_user.companynames
   end
 
   # GET /companynames/1
@@ -26,11 +27,11 @@ class CompanynamesController < ApplicationController
   # POST /companynames
   # POST /companynames.json
   def create
-    @companyname = current_user.companynames.build(companyname_params)
+    @companyname = Companyname.new(companyname_params)
 
     respond_to do |format|
       if @companyname.save
-        format.html { redirect_to @companyname, notice: 'Companyname was successfully created.' }
+        format.html { redirect_to new_user_registration_path(:id => @companyname.id)}
         format.json { render action: 'show', status: :created, location: @companyname }
       else
         format.html { render action: 'new' }
@@ -66,7 +67,13 @@ class CompanynamesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_companyname
-      @companyname = Companyname.find(params[:id])
+      @companyname = Companyname.find(params[:id]) if params[:id]
+    end
+
+    def store_company_data
+      unless user_signed_in?
+        session[:company] = params[:companynames]
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
