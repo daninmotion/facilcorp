@@ -13,6 +13,7 @@ class CompanynamesController < ApplicationController
   # GET /companynames/1
   # GET /companynames/1.json
   def show
+
   end
 
   # GET /companynames/new

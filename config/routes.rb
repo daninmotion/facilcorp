@@ -2,7 +2,8 @@ Facilcorp07::Application.routes.draw do
   devise_for :users,  :controllers => {:registrations => "registrations", :sessions => "sessions"}
   devise_scope :user do 
     authenticated :user do 
-      root :to => 'companynames#index', as: :authenticated_root
+      root :to => "companynames#show", as: :authenticated_root
+
     end
     unauthenticated :user do
       root :to => "companynames#new", as: :unauthenticated_root
