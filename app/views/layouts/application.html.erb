@@ -6,12 +6,13 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
 		
 		<div class="container">
-			<a class="navbar-brand" href="http://www.facilcorp.co/">fácilcorp</a>
+			<a class="navbar-brand" href="">fácilcorp</a>
 			<ul class="nav navbar-nav">
 				<li><%=link_to "Por qué usar facilcorp?", faq_index_path %></li>
 			</ul>
@@ -20,7 +21,6 @@
 					<li><%= link_to current_user.email, edit_user_registration_path %></li>
 					<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 					<% else %>
-						<li><%= link_to "Sign Up", new_user_registration_path %></li>
 						<li><%= link_to "Log In", user_session_path %></li>
 					<% end %>
 			</ul>
@@ -33,6 +33,10 @@
 	<p class="alert"><%= alert %></p>
 		<%= yield %>
 	</div>
-
+	<script type="text/javascript">
+	    $(document).ready(function(){
+	        $('.carousel').carousel();
+	    });
+	</script>
 </body>
 </html>

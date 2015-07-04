@@ -13,7 +13,7 @@ class CompanynamesController < ApplicationController
   # GET /companynames/1
   # GET /companynames/1.json
   def show
-
+    @companynames = current_user.companynames
   end
 
   # GET /companynames/new
@@ -60,7 +60,7 @@ class CompanynamesController < ApplicationController
   def destroy
     @companyname.destroy
     respond_to do |format|
-      format.html { redirect_to companynames_url }
+      format.html { redirect_to home_url }
       format.json { head :no_content }
     end
   end

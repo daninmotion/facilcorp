@@ -1,32 +1,16 @@
-<% if @companyname %>
-
-  <p>
-    <strong>Nombre de la empresa:</strong>
-    <%= @companyname.title %>
-  </p>
-
-  <p>
-    <strong>Nombre del empresario o epresaria:</strong>
-    <%= @companyname.name %>
-  </p>
-
-  <p>
-    <strong>Dirección:</strong>
-    <%= @companyname.address %>
-  </p>
-
-  <p>
-    <strong>Teléfono:</strong>
-    <%= @companyname.phone %>
-  </p>
-  <p>
-    <strong>Por favor asegúrese de que el infomration este correcta. Una vez que usted paga comenzamos a procesar su información para incorporar su empresa.</strong>
-  </p>
-
-  <%= link_to 'Edit', edit_companyname_path(@companyname) %> |
-  <%= link_to 'Back', companynames_path %>
-
-  <p>
-    <%= render template: "charges/new" %>
-  </p>
+<% @companynames.each do |companyname| %>
+  <table class="table">
+    <h1>Dashboard</h1>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td><%= companyname.title %></td>
+        <td><%= companyname.title %></td>
+        <td><%= companyname.name %></td>
+        <td><%= companyname.address %></td>
+        <td><%= companyname.phone %></td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to "Back", companynames_path, class: "btn btn-default" %>
 <% end %>

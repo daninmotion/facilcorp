@@ -2,7 +2,7 @@ Facilcorp07::Application.routes.draw do
   devise_for :users,  :controllers => {:registrations => "registrations", :sessions => "sessions"}
   devise_scope :user do 
     authenticated :user do 
-      root :to => "companynames#show", as: :authenticated_root
+      root :to => "companynames#index", as: :authenticated_root
 
     end
     unauthenticated :user do
@@ -15,6 +15,8 @@ Facilcorp07::Application.routes.draw do
   resources :charges
 
   resources :faq
+
+  get '/home' => 'companynames#home'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

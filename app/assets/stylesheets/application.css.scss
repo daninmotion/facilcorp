@@ -24,28 +24,101 @@ html, body {
 
 /***Sign up page***/
 
+.logo h1 {
+	padding-top: 5%;
+	font-size: 8em;
+	color: white;	
+}
+
+.logo h3 {
+	color: white;
+	margin-top: -8%;
+	padding-bottom: 10%;
+	font-size: 2.5em;
+}
+
 .left {
-	margin-top: 5%;
-	margin-left: 5%;
 	color: white;
 }
 
 .left h1 {
-	font-size: 10em;
+	margin-top: 20%;
+	font-size: 5em;
+	padding-bottom: 2%;
 }
 
 .left h3 {
-	margin-top: -10%;
+	margin-top: -8%;
+	padding-bottom: 10%;
 	font-size: 2.5em;
 }
 
+
 .right {
-	margin-left: 5%;
+	margin-left: 0%;
 	color: white;
+}
+
+
+#myCarousel ol {
+	display: center;
 }
 
 #page_wrapper {
 	padding: 3em;
 	float: left;
 	margin-right: 2em;
+
+	h1 {
+		font-size: 2.2em;
+		color: white;
+	}
+
 }
+
+.form-group {
+	font-size: 1.2em;
+	color: white;
+}
+
+
+
+
+/***Listing***/
+
+#listing {
+	p {
+		color: #D3D3D3;
+		font-size: 1.5em;
+	}
+}
+
+/***Charges***/
+
+.amount {
+	margin-top: 1%; 
+
+	span {
+		font-size: 1.80em;
+	}	
+}
+
+/***Dashboard***/
+
+.table {
+
+	th {
+		font-size: 1.1em;
+	}
+	
+	td {
+		font-size: 1.1em;
+	}
+}
+
+
+
+
+
+
+

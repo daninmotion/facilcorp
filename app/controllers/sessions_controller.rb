@@ -1,4 +1,4 @@
-sclass SessionsController < Devise::SessionsController
+class SessionsController < Devise::SessionsController
 
 def new
   @companyname = Companyname.new(companyname_params)

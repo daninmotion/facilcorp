@@ -1,33 +1,20 @@
-<h1>Listing companynames</h1>
+<div class="col-md-12" id="listing">
+  <% @companynames.each do |companyname| %>
+    <h3>Nombre de la empresa:</h3><p><%= companyname.title %></p>
+    <h3>Nombre del empresario o epresaria:</h3><p><%= companyname.name %></tp>
+    <h3>Dirección:</h3><p><%= companyname.address %></p>
+    <h3>Teléfono:</h3><p><%= companyname.phone %></p>
+    <%= link_to 'Dashboard', companyname, class: "btn btn-default" %>
+    <%= link_to 'Edit', edit_companyname_path(companyname), class: "btn btn-default" %>
+    <%= link_to 'Destroy', companyname, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+    <h3>Por favor asegúrese de que la infomration este correcta. Una vez que usted paga comenzamos a procesar su información para incorporar su empresa.</h3>
 
-  <tbody>
-    <% @companynames.each do |companyname| %>
-      <tr>
-        <td><%= companyname.title %></td>
-        <td><%= companyname.name %></td>
-        <td><%= companyname.address %></td>
-        <td><%= companyname.phone %></td>
-        <td><%= link_to 'Show', companyname %></td>
-        <td><%= link_to 'Edit', edit_companyname_path(companyname) %></td>
-        <td><%= link_to 'Destroy', companyname, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <p>
+      <%= render template: "charges/new" %>
+    </p>
+  <% end %>
+</div>
 
 <br>
 
-<%= link_to 'New Companyname', new_companyname_path %>
