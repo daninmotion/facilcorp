@@ -1,11 +1,6 @@
 class CompanynamesController < ApplicationController
   before_action :set_companyname, only: [:show, :edit, :update, :destroy]
   before_action :store_company_data, only: [:create]
-<<<<<<< HEAD
-  #before_action :authenticate_user!, only: [:create]
-=======
-  before_action :authenticate_user!, only: [:create]
->>>>>>> 6e1e424ecc3c9c9a43b7609e723ef6737361603d
 
 
   # GET /companynames
@@ -33,7 +28,6 @@ class CompanynamesController < ApplicationController
   # POST /companynames.json
   def create
     @companyname = Companyname.new(companyname_params)
-
     respond_to do |format|
       if @companyname.save
         format.html { redirect_to new_user_registration_path(:id => @companyname.id)}

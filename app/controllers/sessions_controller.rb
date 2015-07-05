@@ -1,7 +1,7 @@
 class SessionsController < Devise::SessionsController
 
 def new
-  @companyname = Companyname.new(companyname_params)
+  @companyname = Companyname.find(params[:id])
   @companyname.save
   super
 end
