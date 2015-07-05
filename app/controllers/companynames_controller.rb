@@ -1,7 +1,11 @@
 class CompanynamesController < ApplicationController
   before_action :set_companyname, only: [:show, :edit, :update, :destroy]
   before_action :store_company_data, only: [:create]
+<<<<<<< HEAD
   #before_action :authenticate_user!, only: [:create]
+=======
+  before_action :authenticate_user!, only: [:create]
+>>>>>>> 6e1e424ecc3c9c9a43b7609e723ef6737361603d
 
 
   # GET /companynames
@@ -69,6 +73,12 @@ class CompanynamesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_companyname
       @companyname = Companyname.find(params[:id]) if params[:id]
+    end
+
+    def store_company_data
+      unless user_signed_in?
+        session[:company] = params[:companynames]
+      end
     end
 
     def store_company_data
