@@ -1,4 +1,5 @@
 Facilcorp07::Application.routes.draw do
+  mount Payola::Engine => '/payola', as: :payola
   devise_for :users,  :controllers => {:registrations => "registrations", :sessions => "sessions"}
   devise_scope :user do 
     authenticated :user do 

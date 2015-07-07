@@ -1,16 +1,20 @@
 class SessionsController < Devise::SessionsController
 
 def new
-  @companyname = Companyname.find(params[:id])
-  @companyname.save
+  if params[:id]
+    @companyname = Companyname.find(params[:id])
+    @companyname.save
+  end
   super
 end
 
 def create
     super
-    @companyname = Companyname.find(params[:id])
-    @companyname.user = current_user
-    @companyname.save
+    if params[:id]
+      @companyname = Companyname.find(params[:id])
+      @companyname.user = current_user
+      @companyname.save
+  end
 end
   private
     # Never trust parameters from the scary internet, only allow the white list through.
