@@ -18,6 +18,7 @@ Facilcorp07::Application.routes.draw do
   resources :faq
 
   get '/home' => 'companynames#home'
+  get '/mas_informacion' => 'companynames#mas_informacion'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

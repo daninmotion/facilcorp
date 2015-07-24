@@ -64,6 +64,31 @@ html, body {
 	display: center;
 }
 
+#money {
+	text-align: center;
+	font-family: sans-serif;
+	margin-left: 0%;
+}
+
+#paquete {
+	margin-left: 5%;
+}
+
+#mas {
+	text-align: center;
+	padding-top: 2%;
+	margin-left: -5%;
+	font-size: .50em;
+
+	a {
+		color: #33474e;
+	}
+}
+
+#mas2 {
+	color: white;
+}
+
 #page_wrapper {
 	padding: 3em;
 	float: left;
@@ -92,6 +117,8 @@ html, body {
 		font-size: 1.5em;
 	}
 }
+
+
 
 /***Charges***/
 
